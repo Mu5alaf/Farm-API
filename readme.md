@@ -46,3 +46,10 @@ This project is a Farm  API built with Django and Django Rest Framework. It prov
 
 - Only authenticated users can access the API endpoints.
 - Users can only manage (create, update, delete) their own farms, crops, and  animals.
+
+## Demo
+![ezgif-4-2fffc1c114](https://github.com/user-attachments/assets/11e91c3b-35a1-4afb-8ae0-da47b4074c62)
+
+
+
+
