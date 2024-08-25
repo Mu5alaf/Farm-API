@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "7c3f7639-4e55-4571-9910-da223da911b7",
+		"name": "Farm API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28843725"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"muhammad\",\r\n    \"email\": \"mu@farm.com\",\r\n    \"password\": \"Aa123#456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"muhammad\",\r\n    \"password\": \"Aa123#456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg5ODkxLCJpYXQiOjE3MjQ1ODk1OTEsImp0aSI6IjM2OWU5MmQzN2JjZjQ4ZmY5MWVhMTU2YWVlNGU5ODRkIiwidXNlcl9pZCI6NH0.EinKUoARMRgzQ6uQBjxxOsk07K0P5-g0Ftyww5g8mMk",
+						"description": "Acsses  user token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"muhammad\",\r\n  \"password\": \"Aa123#456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTkyMTE2LCJpYXQiOjE3MjQ1OTE4MTYsImp0aSI6IjFkZTc3MmI1ZWNjYTQ0ODVhMTM1NTlkZjNkYmUyYjMyIiwidXNlcl9pZCI6OH0.SIQzxQbZvYEvrpM1n5kE9WXnZ_0xsiO__HOnyujdLmU",
+						"description": "Acsses  user token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"muhammad\",\r\n    \"email\": \"mu1@farm.com\",\r\n    \"phone_number\": \"01225273627\",\r\n    \"address\": \"123Dokki\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDY2NTIyNCwiaWF0IjoxNzI0NTc4ODI0LCJqdGkiOiI3YTAwM2RiNzdjOWQ0MGU2YWQ5MDlmMGU0NmRjNmYyOSIsInVzZXJfaWQiOjJ9.uZ3mXwrFKFGfeoRARtJjzHOFxgori-ITuJK62NYt0CY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Farm",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTkyMjQxLCJpYXQiOjE3MjQ1OTE5NDEsImp0aSI6ImM5YjQxMDI4NDA0YzQ3Y2M4OGVlMzcyOGE0YTcxZjJhIiwidXNlcl9pZCI6OH0.2kPgeRlEoUUgbd86-yUPTUK9ImAyqX930AgyEL7JhiM",
+						"description": "add access token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "post jason data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"dina farms\",\r\n  \"location\": \"126alx\",\r\n  \"size\": \"1200\",\r\n  \"owner\": 8\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/farms/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"farms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show list of  farms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg1OTI3LCJpYXQiOjE3MjQ1ODU2MjcsImp0aSI6IjlkYzYyN2E0ZDY5MTQzM2I5MDA4NzBjNzc2MzE5NGQxIiwidXNlcl9pZCI6Mn0.BjxbQ9UTOVQ5ba45ShjswTTmzQ_ASAJl-a2NNbrmwZY",
+						"description": "add access token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/farms/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"farms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show farm by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg1OTI3LCJpYXQiOjE3MjQ1ODU2MjcsImp0aSI6IjlkYzYyN2E0ZDY5MTQzM2I5MDA4NzBjNzc2MzE5NGQxIiwidXNlcl9pZCI6Mn0.BjxbQ9UTOVQ5ba45ShjswTTmzQ_ASAJl-a2NNbrmwZY",
+						"description": "add access token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/farms/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"farms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add crops",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg2NTM1LCJpYXQiOjE3MjQ1ODYyMzUsImp0aSI6IjU4MDU3MjlmZTQ1ZTQ0OGE4MzQxNjUwYTcxY2Y2NWM2IiwidXNlcl9pZCI6Mn0.iraXfixTcCG_7JxSuzAnSvKrgFc4fqB3a8K5k2K2S64",
+						"description": "add access token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "post jason data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Orange\",\r\n  \"type\": \"fruits\",\r\n  \"planting_date\": \"2024-04-01\",\r\n  \"harvest_date\": \"2024-08-01\",\r\n  \"farm\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/crops/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"crops",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get crops list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg1OTI3LCJpYXQiOjE3MjQ1ODU2MjcsImp0aSI6IjlkYzYyN2E0ZDY5MTQzM2I5MDA4NzBjNzc2MzE5NGQxIiwidXNlcl9pZCI6Mn0.BjxbQ9UTOVQ5ba45ShjswTTmzQ_ASAJl-a2NNbrmwZY",
+						"description": "add access token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/crops/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"crops",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get crops by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg2OTI1LCJpYXQiOjE3MjQ1ODY2MjUsImp0aSI6ImQ3ZGZmOWNkM2M3YzQ2ZmQ5Y2MyNmQ4YTNmYzE2N2YzIiwidXNlcl9pZCI6Mn0.oIMGKJprMmBiYAsZUbjH_PN6_kBfyslSyOpX_a4pxc4",
+						"description": "add access token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/crops/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"crops",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add animals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg3MzYxLCJpYXQiOjE3MjQ1ODcwNjEsImp0aSI6IjUxYThhNWMxNzIyYjRhZWE5Yjg1NGRhNzc2ZDQ4YTZkIiwidXNlcl9pZCI6Mn0.eHVt6Ey1vUWVyQpXNPop2tzfTWZJFknxoSmT2sTtm7g",
+						"description": "add access token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "post jason data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"cow\",\r\n    \"species\": \"cattle\",\r\n    \"birth_date\": \"2015-08-01\",\r\n    \"farm\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/animals/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"animals",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get animals list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTg2OTI1LCJpYXQiOjE3MjQ1ODY2MjUsImp0aSI6ImQ3ZGZmOWNkM2M3YzQ2ZmQ5Y2MyNmQ4YTNmYzE2N2YzIiwidXNlcl9pZCI6Mn0.oIMGKJprMmBiYAsZUbjH_PN6_kBfyslSyOpX_a4pxc4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/animals/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"animals",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get animals by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI0NTkzMzYzLCJpYXQiOjE3MjQ1OTMwNjMsImp0aSI6IjFkOGZiZTkyZWYyNTRhOTA4YTk3YWQwN2IwZjcyZTNlIiwidXNlcl9pZCI6MTB9.PhUm-n7oKhnpiGu6t5yzWmiXy4fB-F_1FSylmN3uMbE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/farm/animals/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"farm",
+						"animals",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
