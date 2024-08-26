@@ -1,5 +1,4 @@
 from rest_framework import generics, permissions
-from rest_framework_simplejwt.tokens import RefreshToken
 from .models import User
 from .serializers import UserSerializer, RegisterSerializer
 
